@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from '@material-tailwind/react'
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import ChatPage from './pages/ChatPage';
 
 function App() {
-
   return (
-    <>
-      <div>
-       <h1 className='text-red-500 bg-yellow-500'>Hello</h1>
-       <Button>Button</Button>
-      </div>
-      
-    </>
-  )
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chats" element={<ChatPage />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
